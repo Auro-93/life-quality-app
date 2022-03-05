@@ -1,0 +1,337 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@100;300;400;500&display=swap");
+
+:root {
+  --bg: #fffbeb;
+  --text-color: #187952;
+  --accent: #e1f8aa;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+/* CUSTOM SCROLLBAR */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+/*For Firefox*/
+
+html {
+  scrollbar-color: var(--text-color) white; /* thumb and track color */
+  scrollbar-width: thin;
+}
+
+a {
+  text-decoration: none;
+}
+
+.app-container {
+  background-color: rgba(255, 255, 255, 1);
+  padding: 2rem 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.app-container > img {
+  padding: 0.5rem;
+}
+
+.app-title {
+  margin: 0 0 1rem;
+  font-size: 1.6rem;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.app-instructions {
+  margin: 1rem auto;
+  font-weight: 300;
+  font-size: 0.9rem;
+  width: 90%;
+  line-height: 1.5rem;
+}
+
+.searchCity-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.searchCity-form input {
+  height: 2rem;
+  padding: 1rem;
+  flex: 0.8;
+  margin-right: 0.1rem;
+  border-radius: 5px;
+  border: 1px solid grey;
+  background-color: rgba(247, 254, 231, 0.7);
+}
+
+.searchCity-form input:focus,
+.searchCity-form input:active {
+  border: 1.5px solid var(--text-color);
+  outline: none;
+  box-shadow: none;
+  background-color: white;
+}
+
+.searchCity-form button {
+  width: 2.2rem;
+  height: 2.2rem;
+  padding: 0.2rem;
+  background-color: var(--accent);
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.searchCity-form button:hover,
+.searchCity-form button:active {
+  opacity: 1;
+}
+
+.searchCity-form button img {
+  width: 60%;
+}
+
+.search-result-container {
+  font-family: "Cormorant Garamond", serif;
+  color: var(--text-color);
+  font-weight: 300;
+  font-size: 1.4rem;
+  margin: 1rem 0;
+}
+
+.spinners-container {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  margin: -1rem;
+}
+
+.spinner {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  background-color: var(--text-color);
+  animation-duration: 0.6s;
+  animation-name: loading;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes loading {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0.4;
+    transform: scale(0.4);
+  }
+}
+
+.name-and-total-score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.city-name {
+  margin-right: 0.5rem;
+  font-size: 1.6rem;
+}
+
+.total-score {
+  padding: 1rem;
+  background-color: var(--accent);
+  height: 6rem;
+  width: 6rem;
+  font-weight: bold;
+  font-size: 1.6rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.city-summary {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  line-height: 1.5rem;
+}
+
+.city-cat-grid {
+  padding: 1rem;
+  margin: 2rem 0;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0.5rem;
+}
+
+.stats-card {
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.stats-type {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.stats-type .circle {
+  width: 3rem;
+  height: 3rem;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 100%;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.full-stats-bar {
+  height: 0.5rem;
+  border-radius: 10px;
+}
+
+.percent-stats-bar {
+  font-size: 1.5rem;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.more-info {
+  display: inline-block;
+  background-color: rgba(247, 254, 231, 1);
+  color: black;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  padding: 1rem 2rem;
+  margin: 2rem 0;
+  border-radius: 5px;
+  transition: all 0.3s linear;
+}
+
+.more-info:hover,
+.more-info:active {
+  background-color: var(--accent);
+}
+
+@media screen and (min-width: 500px) {
+  .app-instructions,
+  .city-summary {
+    width: 70%;
+  }
+
+  .city-name {
+    font-size: 2rem;
+  }
+
+  .city-summary {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
+
+  .stats-card {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .searchCity-form input {
+    flex: 0.4;
+  }
+
+  .city-cat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stats-card {
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .app-container {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .app-container {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  .city-cat-grid {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1rem 2rem;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .app-instructions,
+  .city-summary {
+    width: 50%;
+  }
+
+  .app-instructions {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+  }
+
+  .app-container > img {
+    width: 40%;
+  }
+}
