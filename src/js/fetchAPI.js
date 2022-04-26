@@ -3,7 +3,7 @@ import { kebabCase } from "lodash";
 import renderCityInfoUI from "./cityInfoUI.js";
 import { loadingSpinners, scrollToDiv } from "./utilities.js";
 
-const fetchAPI = (e) => {
+const fetchAPI = async (e) => {
   e.preventDefault();
 
   //INITIALIZE VARIABLE FOR THE SEARCH RESULT
@@ -31,7 +31,7 @@ const fetchAPI = (e) => {
   //AXIOS GET REQUEST
 
   try {
-    const response = axios.get(url);
+    const response = await axios.get(url);
     if (response) {
       //REQUEST FULFILLED WITH SUCCESS: CLEAN SEARCH INPUT
       input.value = "";
